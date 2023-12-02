@@ -22,6 +22,7 @@ import {
   CuboidCollider,
 } from '@react-three/rapier';
 import InstancedRigidBodiesCreator from './InstancedRigidBodiesCreator';
+import Light from './Light';
 
 export default function App() {
   // const { width: w, height: h } = useThree((state) => state.viewport)
@@ -43,31 +44,12 @@ export default function App() {
     <>
       {/* <Perf position="top-left" /> */}
       <Physics gravity={[0, -10, 0]}>
-        <ambientLight intensity={0.3} />
+        <ambientLight intensity={0.0} />
 
-        <pointLight
-          intensity={10000}
-          position={[100, 100, 0]}
-          castShadow
-          distance={1000}
-          shadow-mapSize={[1024, 1024]}
-        />
-
-        <pointLight
-          intensity={10000}
-          position={[-100, 100, 0]}
-          castShadow
-          distance={1000}
-          shadow-mapSize={[1024, 1024]}
-        />
-
-        <pointLight
-          intensity={10000}
-          position={[0, 100, 100]}
-          castShadow
-          distance={1000}
-          shadow-mapSize={[1024, 1024]}
-        />
+        <Light x={-100} y={100} z={0} />
+        <Light x={0} y={100} z={100} />
+        <Light x={100} y={100} z={0} />
+        <Light x={0} y={100} z={-100} />
 
         <RigidBody type="fixed">
           <CuboidCollider args={[50, 500, 2]} position={[0, 0, 50.5]} />
@@ -128,7 +110,7 @@ export default function App() {
         minPolarAngle={0}
         maxPolarAngle={Math.PI / 2.1}
         autoRotate
-        autoRotateSpeed={0.5}
+        autoRotateSpeed={0.3}
       />
     </>
   );

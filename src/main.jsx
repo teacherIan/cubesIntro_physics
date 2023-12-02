@@ -8,7 +8,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Canvas
       shadows
-      camera={{ position: [30, 60, 30], fov: 75, rotation: [0, 0, 0] }}
+      camera={{ position: [100, 100, 30], fov: 50, rotation: [0, 0, 0] }}
     >
       <App />
     </Canvas>
