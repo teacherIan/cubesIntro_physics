@@ -38,7 +38,7 @@ export default function InstancedRigidBodiesCreator(props) {
   }, []);
 
   return (
-    <InstancedRigidBodies restitution={0.7} instances={instances}>
+    <InstancedRigidBodies instances={instances}>
       <instancedMesh castShadow receiveShadow args={[null, null, cubesCount]}>
         <boxGeometry
           args={[

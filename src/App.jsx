@@ -44,12 +44,12 @@ export default function App() {
     <>
       {/* <Perf position="top-left" /> */}
       <Physics gravity={[0, -10, 0]}>
-        <ambientLight intensity={0.0} />
+        <ambientLight intensity={0.5} />
 
-        <Light x={-100} y={120} z={0} />
-        <Light x={0} y={120} z={100} />
-        <Light x={100} y={120} z={0} />
-        <Light x={0} y={120} z={-100} />
+        <Light x={-150} y={150} z={0} />
+        <Light x={0} y={150} z={150} />
+        <Light x={150} y={150} z={0} />
+        <Light x={0} y={150} z={-150} />
 
         <RigidBody type="fixed">
           <CuboidCollider args={[50, 500, 2]} position={[0, 0, 50.5]} />
