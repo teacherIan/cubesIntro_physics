@@ -27,7 +27,7 @@ export default function InstancedRigidBodiesCreator(props) {
         key: 'instance_' + i,
         position: [
           (Math.random() - 0.5) * 50,
-          75 + i * 4,
+          100 + i * 4,
           (Math.random() - 0.5) * 50,
         ],
         rotation: [Math.random(), Math.random(), Math.random()],
@@ -38,7 +38,7 @@ export default function InstancedRigidBodiesCreator(props) {
   }, []);
 
   return (
-    <InstancedRigidBodies instances={instances}>
+    <InstancedRigidBodies restitution={0.7} instances={instances}>
       <instancedMesh castShadow receiveShadow args={[null, null, cubesCount]}>
         <boxGeometry
           args={[

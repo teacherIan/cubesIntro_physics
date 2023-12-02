@@ -46,10 +46,10 @@ export default function App() {
       <Physics gravity={[0, -10, 0]}>
         <ambientLight intensity={0.0} />
 
-        <Light x={-100} y={100} z={0} />
-        <Light x={0} y={100} z={100} />
-        <Light x={100} y={100} z={0} />
-        <Light x={0} y={100} z={-100} />
+        <Light x={-100} y={120} z={0} />
+        <Light x={0} y={120} z={100} />
+        <Light x={100} y={120} z={0} />
+        <Light x={0} y={120} z={-100} />
 
         <RigidBody type="fixed">
           <CuboidCollider args={[50, 500, 2]} position={[0, 0, 50.5]} />
@@ -69,11 +69,11 @@ export default function App() {
 
         {counter > 3 ? (
           <InstancedRigidBodiesCreator
-            cubesCount={50}
+            cubesCount={40}
             text={'HANGZHOU INTERNATIONAL SCHOOL'}
-            width={25}
+            width={34}
             backgroundColorYellow={true}
-            height={5}
+            height={7}
             fontSize={1.2}
           />
         ) : null}
@@ -86,7 +86,7 @@ export default function App() {
 
         {counter > 6 ? (
           <InstancedRigidBodiesCreator
-            cubesCount={30}
+            cubesCount={40}
             text={'LOADING'}
             width={10}
             backgroundColorYellow={false}
@@ -96,12 +96,12 @@ export default function App() {
 
         {counter > 9 ? (
           <InstancedRigidBodiesCreator
-            cubesCount={150}
+            cubesCount={100}
             text={counter.toString().toUpperCase() + '%'}
-            width={4}
+            width={6}
             backgroundColorYellow={true}
-            height={4}
-            fontSize={2}
+            height={6}
+            fontSize={2.1}
           />
         ) : null}
       </Physics>

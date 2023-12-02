@@ -6,12 +6,12 @@ export default function Light(props) {
       castShadow
       distance={1000}
       shadow-mapSize={[1024 * 2, 1024 * 2]}
-      //   shadow-camera-top={1}
-      //   shadow-camera-right={-1}
-      //   shadow-camera-bottom={-1}
-      //   shadow-camera-left={1}
-      //   shadow-camera-near={1}
-      //   shadow-camera-far={10}
+      shadow-camera-top={100}
+      shadow-camera-right={-100}
+      shadow-camera-bottom={-100}
+      shadow-camera-left={100}
+      shadow-camera-near={1}
+      shadow-camera-far={100}
     />
   );
 }
