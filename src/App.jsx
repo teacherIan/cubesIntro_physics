@@ -44,12 +44,12 @@ export default function App() {
     <>
       {/* <Perf position="top-left" /> */}
       <Physics gravity={[0, -10, 0]}>
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={1.2} />
 
-        <Light x={-150} y={150} z={0} />
-        <Light x={0} y={150} z={150} />
-        <Light x={150} y={150} z={0} />
-        <Light x={0} y={150} z={-150} />
+        <Light x={-150} y={200} z={0} />
+        <Light x={0} y={200} z={150} />
+        <Light x={150} y={200} z={0} />
+        <Light x={0} y={200} z={-150} />
 
         <RigidBody type="fixed">
           <CuboidCollider args={[50, 500, 2]} position={[0, 0, 50.5]} />
@@ -80,7 +80,7 @@ export default function App() {
 
         <RigidBody restitution={1} type="fixed" position={[0, -1, 0]}>
           <Box receiveShadow args={[1000, 1, 1000]}>
-            <meshStandardMaterial color={'#F6BE00'} />
+            <meshStandardMaterial color={'#4A6E96'} />
           </Box>
         </RigidBody>
 
