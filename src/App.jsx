@@ -43,13 +43,14 @@ export default function App() {
     <>
       {/* <Perf position="top-left" /> */}
       <Physics gravity={[0, -10, 0]}>
-        <ambientLight intensity={0} />
+        <ambientLight intensity={0.3} />
 
         <pointLight
           intensity={10000}
           position={[100, 100, 0]}
           castShadow
           distance={1000}
+          shadow-mapSize={[1024, 1024]}
         />
 
         <pointLight
@@ -57,6 +58,7 @@ export default function App() {
           position={[-100, 100, 0]}
           castShadow
           distance={1000}
+          shadow-mapSize={[1024, 1024]}
         />
 
         <pointLight
@@ -64,6 +66,7 @@ export default function App() {
           position={[0, 100, 100]}
           castShadow
           distance={1000}
+          shadow-mapSize={[1024, 1024]}
         />
 
         <RigidBody type="fixed">
