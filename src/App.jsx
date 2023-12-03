@@ -111,12 +111,12 @@ export default function App() {
         ) : null}
       </Physics>
 
-      <OrbitControls
+      {/* <OrbitControls
         minPolarAngle={0}
         maxPolarAngle={Math.PI / 2.1}
         autoRotate
         autoRotateSpeed={0.3}
-      />
+      /> */}
     </>
   );
 }
