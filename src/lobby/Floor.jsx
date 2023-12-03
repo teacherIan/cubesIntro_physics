@@ -8,7 +8,7 @@ export default function Floor(props) {
   const [width, setWidth] = useState(0);
   const [springs, api] = useSpring(() => ({
     from: { x: width },
-    to: { x: -window.innerWidth + width },
+    to: { x: -window.innerWidth + width + 10 },
   }));
 
   useLayoutEffect(() => {
@@ -23,10 +23,10 @@ export default function Floor(props) {
     if (textRef.current) {
       api.start({
         from: {
-          x: -window.innerWidth + width,
+          x: -window.innerWidth + width + 10,
         },
         to: {
-          x: -window.innerWidth + width,
+          x: -window.innerWidth + width + 10,
         },
       });
     }
@@ -35,7 +35,7 @@ export default function Floor(props) {
   const handleMouseEnter = () => {
     api.start({
       from: {
-        x: -window.innerWidth + width,
+        x: -window.innerWidth + width + 10,
       },
       to: {
         x: 0,
@@ -49,7 +49,7 @@ export default function Floor(props) {
         x: 0,
       },
       to: {
-        x: -window.innerWidth + width,
+        x: -window.innerWidth + width + 10,
       },
     });
   };
@@ -63,7 +63,7 @@ export default function Floor(props) {
         x: -window.innerWidth,
       },
       to: {
-        x: -window.innerWidth + width,
+        x: -window.innerWidth + width + 10,
       },
     });
   }
@@ -82,7 +82,6 @@ export default function Floor(props) {
         <Button text="Upper School Gym" />
         <Button text="Grade Three Classroom" />
         <Button text="Science Labs" />
-        <Button text="LS Library" />
       </div>
 
       <div ref={textRef} className="floor-tab">
