@@ -13,8 +13,8 @@ export default function Layout() {
         <Lobby />
       ) : (
         <Canvas
+          onTouchStart={() => setLoaded(true)}
           onClick={() => setLoaded(true)}
-          onTouchEnd={() => setLoaded(true)}
           shadows
           camera={{
             position: [100, 120, 50],
