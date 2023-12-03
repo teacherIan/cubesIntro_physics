@@ -7,7 +7,11 @@ export default function Lobby() {
   return (
     <>
       <img className="background-img" src={background}></img>
-      <Floor />
+      <Floor text="1" />
+      <Floor text="2" />
+      <Floor text="3" />
+      <Floor text="4" />
+      <Floor text="5" />
     </>
   );
 }

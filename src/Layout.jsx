@@ -1,11 +1,17 @@
 import App from './App';
 import './index.css';
 import { Canvas } from '@react-three/fiber';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Lobby from './Lobby/Lobby';
 
 export default function Layout() {
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('touchstart', () => {
+      setLoaded(true);
+    });
+  }, []);
 
   return (
     <>
@@ -13,7 +19,6 @@ export default function Layout() {
         <Lobby />
       ) : (
         <Canvas
-          onTouchStart={() => setLoaded(true)}
           onClick={() => setLoaded(true)}
           shadows
           camera={{

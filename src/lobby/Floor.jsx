@@ -1,15 +1,90 @@
 import Button from './Button';
 import './lobby.css';
+import { animated, useSpring } from '@react-spring/web';
+import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 
-export default function Floor() {
+export default function Floor(props) {
+  const textRef = useRef();
+  const [width, setWidth] = useState(0);
+  const [springs, api] = useSpring(() => ({
+    from: { x: width },
+    to: { x: -window.innerWidth + width },
+  }));
+
+  useLayoutEffect(() => {
+    if (textRef.current) {
+      setWidth(textRef.current.offsetWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (textRef.current) {
+      api.start({
+        from: {
+          x: -window.innerWidth + width,
+        },
+        to: {
+          x: -window.innerWidth + width,
+        },
+      });
+    }
+  }, [springs]);
+
+  const handleMouseEnter = () => {
+    api.start({
+      from: {
+        x: -window.innerWidth + width,
+      },
+      to: {
+        x: 0,
+      },
+    });
+  };
+
+  const handleMouseLeave = () => {
+    api.start({
+      from: {
+        x: 0,
+      },
+      to: {
+        x: -window.innerWidth + width,
+      },
+    });
+  };
+
+  function handleResize() {
+    console.log('Resize');
+    setWidth(textRef.current.offsetWidth);
+
+    api.start({
+      from: {
+        x: -window.innerWidth,
+      },
+      to: {
+        x: -window.innerWidth + width,
+      },
+    });
+  }
+
   return (
-    <div className="floor">
+    <animated.div
+      style={{ ...springs }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onResize={handleResize}
+      className="floor"
+      onResizeCapture={handleResize}
+    >
       <div className="buttons">
         <Button text="Button One" />
         <Button text="Button Two" />
       </div>
 
-      <div className="floor-tab">F1</div>
-    </div>
+      <div ref={textRef} className="floor-tab">
+        {props.text}
+      </div>
+    </animated.div>
   );
 }

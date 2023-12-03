@@ -36,6 +36,7 @@
 
 
 .floor {
+
     width: 100vw;
     height: 20svh;
     background-image: linear-gradient(to right, #F6BE00, #f6bd00a6);
@@ -45,6 +46,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transform: translateX(-20%);
+
 }
 
 
@@ -54,7 +57,7 @@
     /* display: flex; */
     margin-right: 5px;
     color: #ffffff;
-    font-size: 20svh;
+    font-size: calc(20svh - 50px);
     /* -webkit-text-stroke: 2px #4A6E96; */
     /* Font-family: Georgia; */
     font-style: italic;
