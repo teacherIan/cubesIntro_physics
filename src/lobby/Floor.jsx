@@ -78,8 +78,11 @@ export default function Floor(props) {
       onResizeCapture={handleResize}
     >
       <div className="buttons">
-        <Button text="Button One" />
-        <Button text="Button Two" />
+        <Button text="The Box" />
+        <Button text="Upper School Gym" />
+        <Button text="Grade Three Classroom" />
+        <Button text="Science Labs" />
+        <Button text="LS Library" />
       </div>
 
       <div ref={textRef} className="floor-tab">

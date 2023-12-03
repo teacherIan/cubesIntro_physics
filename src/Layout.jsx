@@ -7,19 +7,12 @@ import Lobby from '../src/lobby/Lobby';
 export default function Layout() {
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener('touchstart', () => {
-      setLoaded(true);
-    });
-  }, []);
-
   return (
     <>
       {loaded ? (
         <Lobby />
       ) : (
         <Canvas
-          // onClick={() => setLoaded(true)}
           onPointerDown={() => setLoaded(true)}
           shadows
           camera={{
