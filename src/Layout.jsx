@@ -14,6 +14,7 @@ export default function Layout() {
       ) : (
         <Canvas
           onClick={() => setLoaded(true)}
+          onTouchEnd={() => setLoaded(true)}
           shadows
           camera={{
             position: [100, 120, 50],
