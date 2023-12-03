@@ -19,7 +19,8 @@ export default function Layout() {
         <Lobby />
       ) : (
         <Canvas
-          onClick={() => setLoaded(true)}
+          // onClick={() => setLoaded(true)}
+          onPointerDown={() => setLoaded(true)}
           shadows
           camera={{
             position: [100, 120, 50],
