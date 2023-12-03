@@ -100,7 +100,9 @@ export default function App() {
         {counter > 9 ? (
           <InstancedRigidBodiesCreator
             cubesCount={100}
-            text={counter < 25 ? counter.toString().toUpperCase() + '%' : 'TO'}
+            text={
+              counter < 25 ? (counter * 4).toString().toUpperCase() + '%' : 'TO'
+            }
             width={6}
             backgroundColorYellow={true}
             height={6}
