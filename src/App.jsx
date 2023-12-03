@@ -28,6 +28,7 @@ export default function App() {
   // const { width: w, height: h } = useThree((state) => state.viewport)
 
   const [counter, setCounter] = useState(0);
+  const [textRefA, setTextRefA] = useState('Welcome');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,17 +61,19 @@ export default function App() {
 
         <InstancedRigidBodiesCreator
           cubesCount={50}
-          text={'WELCOME'}
-          width={10}
+          text={counter < 25 ? 'WELCOME' : 'CLICK'}
+          width={11}
           backgroundColorYellow={false}
-          height={10}
+          height={11}
           fontSize={0.9}
         />
 
         {counter > 3 ? (
           <InstancedRigidBodiesCreator
             cubesCount={40}
-            text={'HANGZHOU INTERNATIONAL SCHOOL'}
+            text={
+              counter < 25 ? 'HANGZHOU INTERNATIONAL SCHOOL' : 'CLICK TO START'
+            }
             width={34}
             backgroundColorYellow={true}
             height={7}
@@ -87,7 +90,7 @@ export default function App() {
         {counter > 6 ? (
           <InstancedRigidBodiesCreator
             cubesCount={40}
-            text={'LOADING'}
+            text={counter < 25 ? 'LOADING' : 'START'}
             width={10}
             backgroundColorYellow={false}
             height={8}
@@ -97,7 +100,7 @@ export default function App() {
         {counter > 9 ? (
           <InstancedRigidBodiesCreator
             cubesCount={100}
-            text={counter.toString().toUpperCase() + '%'}
+            text={counter < 25 ? counter.toString().toUpperCase() + '%' : 'TO'}
             width={6}
             backgroundColorYellow={true}
             height={6}
