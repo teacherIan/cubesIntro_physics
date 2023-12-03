@@ -1,5 +1,4 @@
-import Button from './Button';
-import Floor from './Floor';
+import Floor from '../lobby/Floor';
 import './lobby.css';
 import background from '/lobby.jpeg';
 

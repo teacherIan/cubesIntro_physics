@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button from '../lobby/Button';
 import './lobby.css';
 import { animated, useSpring } from '@react-spring/web';
 import { useRef, useState, useLayoutEffect, useEffect } from 'react';
