@@ -2,7 +2,7 @@ import App from './App';
 import './index.css';
 import { Canvas } from '@react-three/fiber';
 import { useState, useEffect } from 'react';
-import Lobby from './Lobby/Lobby';
+import Lobby from '../src/lobby/Lobby';
 
 export default function Layout() {
   const [loaded, setLoaded] = useState(false);
