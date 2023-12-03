@@ -1,0 +1,4 @@
+HIS Dark Blue: #13284B
+HIS Gold: #F6BE00
+HIS Website Blue: #4A6E96
+HIS Website Gray: #AFAFAF

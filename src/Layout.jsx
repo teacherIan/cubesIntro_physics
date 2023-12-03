@@ -2,6 +2,7 @@ import App from './App';
 import './index.css';
 import { Canvas } from '@react-three/fiber';
 import { useState } from 'react';
+import Lobby from './Lobby/Lobby';
 
 export default function Layout() {
   const [loaded, setLoaded] = useState(false);
@@ -9,9 +10,10 @@ export default function Layout() {
   return (
     <>
       {loaded ? (
-        <Canvas />
+        <Lobby />
       ) : (
         <Canvas
+          onClick={() => setLoaded(true)}
           shadows
           camera={{
             position: [100, 120, 50],
