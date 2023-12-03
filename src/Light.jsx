@@ -1,7 +1,7 @@
 export default function Light(props) {
   return (
     <pointLight
-      intensity={10000}
+      intensity={40000}
       position={[props.x, props.y, props.z]}
       castShadow
       distance={1000}
