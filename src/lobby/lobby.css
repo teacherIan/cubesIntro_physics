@@ -64,3 +64,13 @@
     /* Font-family: Georgia; */
     font-style: italic;
 }
+
+
+.video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100svw;
+    height: 100svh;
+
+}
