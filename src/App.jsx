@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <>
-      <Perf position="top-left" />
+      {/* <Perf position="top-left" /> */}
       <Physics gravity={[0, -15, 0]}>
         <ambientLight intensity={0.5} />
 
