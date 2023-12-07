@@ -44,7 +44,7 @@ export default function App() {
     <>
       {/* <Perf position="top-left" /> */}
       <Physics gravity={[0, -15, 0]}>
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.2} />
 
         <Light x={-85} y={30} z={0} />
         <Light x={0} y={30} z={85} />
