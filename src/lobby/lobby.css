@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+
+
 }
 
 .background-img {
@@ -73,4 +77,44 @@
     top: 0;
     width: 100svw;
     height: 100svh;
+    overflow: hidden;
+
+
+}
+
+
+.replay {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(5svw + 5svh + 20px);
+    color: white;
+    width: 100svw;
+    height: 100svh;
+    flex-direction: column;
+
+}
+
+
+
+.border {
+    /* border: 5px white solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    cursor: pointer;
+    color: white
+}
+
+.icon {
+    font-size: calc(10svw + 10svh + 30px);
+    margin-right: 10px;
 }

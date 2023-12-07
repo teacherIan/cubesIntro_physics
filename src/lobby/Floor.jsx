@@ -18,7 +18,9 @@ export default function Floor(props) {
       setWidth(textRef.current.offsetWidth);
     }
 
-    window.addEventListener('resize', handleResize);
+    return () => {
+      // Clean up any resources created in the effect function
+    };
   }, []);
 
   useEffect(() => {
@@ -32,6 +34,10 @@ export default function Floor(props) {
         },
       });
     }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [springs]);
 
   const handleMouseEnter = () => {

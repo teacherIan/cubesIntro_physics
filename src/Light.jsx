@@ -1,10 +1,10 @@
 export default function Light(props) {
   return (
     <pointLight
-      intensity={40000}
+      intensity={80000}
       position={[props.x, props.y, props.z]}
       castShadow
-      distance={1000}
+      distance={500}
       shadow-mapSize={[1024, 1024]} //higher map sizes crash on some phones
       shadow-camera-top={300}
       shadow-camera-right={200}

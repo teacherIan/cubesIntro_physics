@@ -11,6 +11,7 @@ import {
   Plane,
   Box,
   Image,
+  SoftShadows,
 } from '@react-three/drei';
 import { suspend } from 'suspend-react';
 import { Perf } from 'r3f-perf';
@@ -33,7 +34,6 @@ export default function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((prevCounter) => prevCounter + 1);
-      console.log(counter);
     }, 1000);
 
     return () => {
@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <>
-      {/* <Perf position="top-left" /> */}
+      <Perf position="top-left" />
       <Physics gravity={[0, -10, 0]}>
         <ambientLight intensity={0.5} />
 
@@ -53,10 +53,10 @@ export default function App() {
         <Light x={0} y={200} z={-150} />
 
         <RigidBody type="fixed">
-          <CuboidCollider args={[50, 500, 2]} position={[0, 0, 50.5]} />
-          <CuboidCollider args={[50, 500, 2]} position={[0, 0, -50.5]} />
-          <CuboidCollider args={[2, 500, 50]} position={[50.5, 0, 0]} />
-          <CuboidCollider args={[2, 500, 50]} position={[-50.5, 0, 0]} />
+          <CuboidCollider args={[100, 500, 2]} position={[0, 0, 75]} />
+          <CuboidCollider args={[100, 500, 2]} position={[0, 0, -75]} />
+          <CuboidCollider args={[2, 500, 100]} position={[75, 0, 0]} />
+          <CuboidCollider args={[2, 500, 100]} position={[-75, 0, 0]} />
         </RigidBody>
 
         <InstancedRigidBodiesCreator
