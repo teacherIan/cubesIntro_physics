@@ -44,18 +44,18 @@ export default function App() {
     <>
       {/* <Perf position="top-left" /> */}
       <Physics gravity={[0, -15, 0]}>
-        <ambientLight intensity={0.2} />
+        <ambientLight intensity={0.4} />
 
-        <Light x={-85} y={30} z={0} />
-        <Light x={0} y={30} z={85} />
-        <Light x={85} y={30} z={0} />
+        <Light x={-85} y={30} z={10} />
+        <Light x={10} y={30} z={85} />
+        <Light x={85} y={30} z={10} />
         {/* <Light x={0} y={30} z={-85} /> */}
 
         <RigidBody type="fixed">
-          <CuboidCollider args={[100, 500, 2]} position={[0, 0, 75]} />
-          <CuboidCollider args={[100, 500, 2]} position={[0, 0, -75]} />
-          <CuboidCollider args={[2, 500, 100]} position={[75, 0, 0]} />
-          <CuboidCollider args={[2, 500, 100]} position={[-75, 0, 0]} />
+          <CuboidCollider args={[100, 500, 2]} position={[0, 0, 100]} />
+          <CuboidCollider args={[100, 500, 2]} position={[0, 0, -100]} />
+          <CuboidCollider args={[2, 500, 100]} position={[100, 0, 0]} />
+          <CuboidCollider args={[2, 500, 100]} position={[-100, 0, 0]} />
         </RigidBody>
 
         <InstancedRigidBodiesCreator
