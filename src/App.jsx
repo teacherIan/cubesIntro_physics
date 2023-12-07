@@ -26,6 +26,7 @@ import Light from './Light';
 
 export default function App() {
   // const { width: w, height: h } = useThree((state) => state.viewport)
+  const wallSize = 120;
 
   const [counter, setCounter] = useState(0);
   const [textRefA, setTextRefA] = useState('Welcome');
@@ -52,10 +53,22 @@ export default function App() {
         {/* <Light x={0} y={30} z={-85} /> */}
 
         <RigidBody type="fixed">
-          <CuboidCollider args={[100, 500, 2]} position={[0, 0, 100]} />
-          <CuboidCollider args={[100, 500, 2]} position={[0, 0, -100]} />
-          <CuboidCollider args={[2, 500, 100]} position={[100, 0, 0]} />
-          <CuboidCollider args={[2, 500, 100]} position={[-100, 0, 0]} />
+          <CuboidCollider
+            args={[wallSize, 500, 2]}
+            position={[0, 0, wallSize]}
+          />
+          <CuboidCollider
+            args={[wallSize, 500, 2]}
+            position={[0, 0, -wallSize]}
+          />
+          <CuboidCollider
+            args={[2, 500, wallSize]}
+            position={[wallSize, 0, 0]}
+          />
+          <CuboidCollider
+            args={[2, 500, wallSize]}
+            position={[-wallSize, 0, 0]}
+          />
         </RigidBody>
 
         <InstancedRigidBodiesCreator
