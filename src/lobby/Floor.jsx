@@ -13,13 +13,14 @@ export default function Floor(props) {
     to: { x: -window.innerWidth + width + 10 },
   }));
 
+  // might be better to just use useEffect
   useLayoutEffect(() => {
     if (textRef.current) {
       setWidth(textRef.current.offsetWidth);
     }
 
     return () => {
-      // Clean up any resources created in the effect function
+      console.log('Cleanup useLayoutEffect');
     };
   }, []);
 

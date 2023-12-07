@@ -21,6 +21,7 @@ export default function Layout() {
             fov: 50,
             rotation: [0, 0, 0],
             near: 1,
+            far: 1000,
           }}
         >
           <App />

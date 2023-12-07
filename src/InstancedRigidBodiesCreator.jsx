@@ -41,12 +41,12 @@ export default function InstancedRigidBodiesCreator(props) {
     <InstancedRigidBodies instances={instances}>
       <instancedMesh castShadow receiveShadow args={[null, null, cubesCount]}>
         <boxGeometry
+          castShadow
           args={[
             props.width,
             props.height ? props.height : 1,
             props.height ? props.height : 2,
           ]}
-          castShadow
         />
         <meshStandardMaterial>
           <RenderTexture attach="map" anisotropy={16}>

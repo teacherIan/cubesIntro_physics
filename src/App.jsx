@@ -11,7 +11,6 @@ import {
   Plane,
   Box,
   Image,
-  SoftShadows,
 } from '@react-three/drei';
 import { suspend } from 'suspend-react';
 import { Perf } from 'r3f-perf';
@@ -44,13 +43,13 @@ export default function App() {
   return (
     <>
       <Perf position="top-left" />
-      <Physics gravity={[0, -10, 0]}>
+      <Physics gravity={[0, -15, 0]}>
         <ambientLight intensity={0.5} />
 
-        <Light x={-150} y={200} z={0} />
-        <Light x={0} y={200} z={150} />
-        <Light x={150} y={200} z={0} />
-        <Light x={0} y={200} z={-150} />
+        <Light x={-85} y={30} z={0} />
+        <Light x={0} y={30} z={85} />
+        <Light x={85} y={30} z={0} />
+        {/* <Light x={0} y={30} z={-85} /> */}
 
         <RigidBody type="fixed">
           <CuboidCollider args={[100, 500, 2]} position={[0, 0, 75]} />
@@ -60,7 +59,7 @@ export default function App() {
         </RigidBody>
 
         <InstancedRigidBodiesCreator
-          cubesCount={50}
+          cubesCount={100}
           text={counter < 25 ? 'WELCOME' : 'CLICK'}
           width={11}
           backgroundColorYellow={false}
@@ -70,7 +69,7 @@ export default function App() {
 
         {counter > 3 ? (
           <InstancedRigidBodiesCreator
-            cubesCount={40}
+            cubesCount={100}
             text={
               counter < 25 ? 'HANGZHOU INTERNATIONAL SCHOOL' : 'CLICK TO START'
             }
@@ -82,14 +81,14 @@ export default function App() {
         ) : null}
 
         <RigidBody restitution={1} type="fixed" position={[0, -1, 0]}>
-          <Box receiveShadow args={[1000, 1, 1000]}>
+          <Box receiveShadow args={[600, 1, 600]}>
             <meshStandardMaterial color={'#4A6E96'} />
           </Box>
         </RigidBody>
 
         {counter > 6 ? (
           <InstancedRigidBodiesCreator
-            cubesCount={40}
+            cubesCount={100}
             text={counter < 25 ? 'LOADING' : 'START'}
             width={10}
             backgroundColorYellow={false}
@@ -99,7 +98,7 @@ export default function App() {
 
         {counter > 9 ? (
           <InstancedRigidBodiesCreator
-            cubesCount={100}
+            cubesCount={150}
             text={
               counter < 25 ? (counter * 4).toString().toUpperCase() + '%' : 'TO'
             }
